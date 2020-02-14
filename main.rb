@@ -30,7 +30,6 @@ run = runs['workflow_runs'].find do |r|
   r['head_sha'] == commit
 end
 
-puts "==> Run: #{run['id']}"
 
 artifacts = api(token, run['artifacts_url'])
 artifacts = JSON.parse(artifacts)
