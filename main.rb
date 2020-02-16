@@ -27,6 +27,8 @@ api = 'https://api.github.com'
 runs = api(token, "#{api}/repos/#{repo}/actions/workflows/#{workflow}/runs")
 runs = JSON.parse(runs)
 
+puts "==> Runs: #{runs}"
+
 run = runs['workflow_runs'].find do |r|
   r['head_sha'] == commit
 end
